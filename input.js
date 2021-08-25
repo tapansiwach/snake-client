@@ -1,8 +1,12 @@
 let connection;
+
 const MOVEUP = "Move: up";
 const MOVELEFT = "Move: left";
 const MOVEDOWN = "Move: down";
 const MOVERIGHT = "Move: right";
+
+const GOODBYE = "Say: bye";
+const HELLO = "Say: hello"
 
 const handleUserInput = (key) => {
   if (key === "\u0003") process.exit();
@@ -48,6 +52,14 @@ const handleUserInput = (key) => {
       connection.write(MOVEUP);
       connection.write(MOVELEFT);
     }
+  }
+
+  if (key === "g") {
+    connection.write(GOODBYE);
+  }
+
+  if (key === "h") {
+    connection.write(HELLO);
   }
 
 };
