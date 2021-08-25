@@ -1,18 +1,23 @@
 // established a connection with the game server
 const connect = () => {
-  const client = net.createConnection({
+  const connection = net.createConnection({
     host: IP,
     port: PORT
   });
 
   // interpret incoming data as text
-  client.setEncoding("utf8");
+  connection.setEncoding("utf8");
 
-  client.on("data", () => {
+  connection.on("data", () => {
     console.log("server says:", data);
   });
 
-  return client;
+  connection.on("connect", () => {
+    console.log("client says: Successfully connected to game server");
+    connection.write("Name: TPN");
+  });
+
+  return connection;
 };
 
 module.exports = { connect };
