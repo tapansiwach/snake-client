@@ -1,12 +1,6 @@
 let connection;
 
-const MOVEUP = "Move: up";
-const MOVELEFT = "Move: left";
-const MOVEDOWN = "Move: down";
-const MOVERIGHT = "Move: right";
-
-const GOODBYE = "Say: bye";
-const HELLO = "Say: hello"
+const { MOVEUP, MOVELEFT, MOVEDOWN, MOVERIGHT, GOODBYE, HELLO } = require("./constants");
 
 const handleUserInput = (key) => {
   if (key === "\u0003") process.exit();
