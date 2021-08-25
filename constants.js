@@ -1,5 +1,5 @@
-const IP = "10.0.0.209";
-const PORT = "50541";
+const IP = "135.23.223.133";
+const PORT = "50542";
 
 const MOVEUP = "Move: up";
 const MOVELEFT = "Move: left";

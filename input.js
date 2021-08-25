@@ -7,27 +7,49 @@ const handleUserInput = (key) => {
 
   let lastKey;
 
+  let startTime = Date.now();
   if (key === "w") {
     // console.log(MOVEUP);
-    connection.write(MOVEUP);
+    let move = setInterval(() => {
+      connection.write(MOVEUP);
+    }, 50);
+    if (Date.now() > startTime + 50 * 10) {
+      clearInterval(move);
+    }
     lastKey = key;
   }
 
   if (key === "a") {
     // console.log(MOVELEFT);
-    connection.write(MOVELEFT);
+    let move = setInterval(() => {
+      connection.write(MOVELEFT);
+    }, 50);
+    if (Date.now() > startTime + 50 * 10) {
+      clearInterval(move);
+    }
     lastKey = key;
   }
 
   if (key === "s") {
     // console.log(MOVVEDOWN);
-    connection.write(MOVEDOWN);
+
+    let move = setInterval(() => {
+      connection.write(MOVEDOWN);
+    }, 50);
+    if (Date.now() > startTime + 50 * 10) {
+      clearInterval(move);
+    }
     lastKey = key;
   }
 
   if (key === "d") {
     // console.log(MOVERIGHT);
-    connection.write(MOVERIGHT);
+    let move = setInterval(() => {
+      connection.write(MOVERIGHT);
+    }, 50);
+    if (Date.now() > startTime + 50 * 10) {
+      clearInterval(move);
+    }
     lastKey = key;
   }
 
@@ -54,6 +76,10 @@ const handleUserInput = (key) => {
 
   if (key === "h") {
     connection.write(HELLO);
+  }
+
+  if (key === "t") {
+    connection.write("EPIPE");
   }
 
 };
